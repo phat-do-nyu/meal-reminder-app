@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Meal Reminder App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
 
-## Available Scripts
+The Meal Reminder App is a web application that helps users maintain a healthy eating schedule by reminding them to eat meals at regular times (breakfast, lunch, and dinner). Additionally, it provides healthy meal suggestions for each meal using the Edamam Recipe Search API, promoting variety in diet and easy access to nutritious recipes. This app is designed for individuals who have busy schedules and may forget to eat or need inspiration for healthy meal choices.
 
-In the project directory, you can run:
+## Setup and Installation
 
-### `npm start`
+To run this project locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/yourusername/meal-reminder-app.git
+   cd meal-reminder-app
+   ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
 
-### `npm test`
+3. **Start the Development Server**:
+   ```bash
+   npm start
+   ```
+   The application should now be running at `http://localhost:3000`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+> **Note**: This project requires an Edamam API key. Add the `APP_ID` and `APP_KEY` directly in the `MealSuggestions.jsx` component for each API request.
 
-### `npm run build`
+## API Information
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This app uses the [Edamam Recipe Search API](https://developer.edamam.com/) to retrieve meal suggestions for breakfast, lunch, and dinner. The `MealSuggestions` component makes asynchronous requests to the API based on the `mealType` (breakfast, lunch, or dinner). Each meal suggestion includes the recipe name, image, calories, and a link to view the full recipe.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**API Integration**:
+- **File**: `MealSuggestions.jsx`
+- **Endpoints**: Requests are made with the parameters `q=healthy` and `mealType` to get meal suggestions for each type.
+- **Usage**: Provides variety in meal options and nutritional information to the user.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## AI Assistance Credits
 
-### `npm run eject`
+This project was partially developed with the assistance of ChatGPT, which contributed to several parts:
+- **Reminder Logic**: ChatGPT helped implement the `useEffect` hook in `MealReminder.jsx` for checking meal times and updating reminder messages.
+- **API Integration**: Assisted with the API fetching logic in `MealSuggestions.jsx` and error handling to ensure reliable responses.
+- **Project Structure and Organization**: Recommended file organization and separation of concerns for better code modularity.
+  
+Each AI-assisted section was reviewed and documented in the code to ensure full understanding and functionality.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to update the placeholder GitHub URL with the actual repository link before finalizing the README file. Let me know if you need further customization!

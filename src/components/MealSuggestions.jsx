@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 function MealSuggestions({ mealType }) {
-    const [mealOptions, setMealOptions] = useState([]); // Initialize as empty array
-    const APP_ID = "7d05388b"; 
-    const APP_KEY = "b683401a426f376412a55623db33e7e5";
+    const [mealOptions, setMealOptions] = useState([]);
+    const APP_ID = "your_app_id";
+    const APP_KEY = "your_app_key";
 
     useEffect(() => {
         const fetchMealOptions = async () => {
@@ -12,10 +12,13 @@ function MealSuggestions({ mealType }) {
                     `https://api.edamam.com/search?q=healthy&mealType=${mealType}&app_id=${APP_ID}&app_key=${APP_KEY}&from=0&to=3`
                 );
                 const data = await response.json();
-                setMealOptions(data.hits || []); // Fallback to empty array if data.hits is undefined
+                if (data.hits && data.hits.length > 0) {
+                    setMealOptions(data.hits);
+                } else {
+                    console.log(`No meal options found for ${mealType}`);
+                }
             } catch (error) {
                 console.error(`Error fetching ${mealType} options:`, error);
-                setMealOptions([]); // Set as empty array if fetch fails
             }
         };
 
